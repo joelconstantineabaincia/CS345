@@ -156,27 +156,11 @@ namespace DIP_Activity
                         if (area > 100)
                         {
                             // Step C: Hole Detection (identifies 5-centavo coins)
-                            int holePixels = 0;
-                            int marginX = (maxX - minX) / 4;
-                            int marginY = (maxY - minY) / 4;
 
-                            for (int cy = minY + marginY; cy <= maxY - marginY; cy++)
-                            {
-                                for (int cx = minX + marginX; cx <= maxX - marginX; cx++)
-                                {
-                                    if (!binary[cx, cy]) // Background inside center area
-                                    {
-                                        holePixels++;
-                                    }
-                                }
-                            }
-
-                            bool hasHole = holePixels > 25;
 
                             detectedCoins.Add(new CoinBlob
                             {
                                 Area = area,
-                                HasHole = hasHole
                             });
                         }
                     }
@@ -193,21 +177,18 @@ namespace DIP_Activity
             int c25c = 0;
             int c1p = 0;
             int c5p = 0;
+            const int T0 = 2900; // 5c  | 10c (gap 2701 -> 3189)
+            const int T1 = 3800; // 10c | 25c (gap 3327 -> 4380)
+            const int T2 = 5400; // 25c | 1P  (gap 4613 -> 6224)
+            const int T3 = 7100; // 1P  | 5P  (gap 6392 -> 7780)
 
             foreach (var coin in detectedCoins)
             {
-                if (coin.HasHole)
-                {
-                    c5c++; // 5 centavos has the center hole
-                }
-                else
-                {
-                    // Calibrate cutoffs based on pixel area
-                    if (coin.Area < 1800) c10c++;
-                    else if (coin.Area < 3000) c25c++;
-                    else if (coin.Area < 4200) c1p++;
-                    else c5p++;
-                }
+                if (coin.Area < T0) c5c++;
+                else if (coin.Area < T1) c10c++;
+                else if (coin.Area < T2) c25c++;
+                else if (coin.Area < T3) c1p++;
+                else c5p++;
             }
 
             double totalAmount = (c5c * 0.05) + (c10c * 0.10) + (c25c * 0.25) + (c1p * 1.00) + (c5p * 5.00);
