@@ -3,3 +3,6 @@ bin/
 obj/
 *.vsidx*.ppt
 *.pptx
+*.pdf
+*.doc
+*.docx
