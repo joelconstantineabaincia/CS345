@@ -1,0 +1,37 @@
+Experiment,Epoch,TrainMSE
+"Exp 1 (Small Net, Low LR)",1,0.227691
+"Exp 1 (Small Net, Low LR)",100,0.103638
+"Exp 1 (Small Net, Low LR)",200,0.094966
+"Exp 1 (Small Net, Low LR)",300,0.088725
+"Exp 1 (Small Net, Low LR)",400,0.085656
+"Exp 1 (Small Net, Low LR)",500,0.083679
+"Exp 1 (Small Net, Low LR)",600,0.081594
+"Exp 2 (Baseline Default LR)",1,0.225618
+"Exp 2 (Baseline Default LR)",100,0.101341
+"Exp 2 (Baseline Default LR)",200,0.092352
+"Exp 2 (Baseline Default LR)",300,0.086015
+"Exp 2 (Baseline Default LR)",400,0.082376
+"Exp 2 (Baseline Default LR)",500,0.078009
+"Exp 2 (Baseline Default LR)",600,0.073920
+"Exp 2 (Baseline Default LR)",700,0.069844
+"Exp 2 (Baseline Default LR)",800,0.066509
+"Exp 3 (Deep Hidden, Med LR)",1,0.226338
+"Exp 3 (Deep Hidden, Med LR)",100,0.103955
+"Exp 3 (Deep Hidden, Med LR)",200,0.094682
+"Exp 3 (Deep Hidden, Med LR)",300,0.089118
+"Exp 3 (Deep Hidden, Med LR)",400,0.084477
+"Exp 3 (Deep Hidden, Med LR)",500,0.080531
+"Exp 3 (Deep Hidden, Med LR)",600,0.077661
+"Exp 3 (Deep Hidden, Med LR)",700,0.074442
+"Exp 3 (Deep Hidden, Med LR)",800,0.070082
+"Exp 3 (Deep Hidden, Med LR)",900,0.065830
+"Exp 3 (Deep Hidden, Med LR)",1000,0.062760
+"Exp 4 (Large Net, Fast LR)",1,0.214149
+"Exp 4 (Large Net, Fast LR)",100,0.103624
+"Exp 4 (Large Net, Fast LR)",200,0.094053
+"Exp 4 (Large Net, Fast LR)",300,0.087365
+"Exp 4 (Large Net, Fast LR)",400,0.082297
+"Exp 4 (Large Net, Fast LR)",500,0.077708
+"Exp 4 (Large Net, Fast LR)",600,0.073748
+"Exp 4 (Large Net, Fast LR)",700,0.069343
+"Exp 4 (Large Net, Fast LR)",800,0.065284
